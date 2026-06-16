@@ -17,7 +17,7 @@
       </b-col>
 
       <b-col>
-        <b-form-group label="Клип:" label-for="clip">
+        <b-form-group label="Обрезка:" label-for="clip">
           <b-form-select
             class="u-full-width"
             v-bind:value="value.clip"
