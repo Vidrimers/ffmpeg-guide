@@ -33,16 +33,6 @@ App
 
     <GitHubCorner />
 
-    <b-alert
-      class="banner text-center mb-0"
-      variant="info"
-      dismissible
-      :show="showBanner"
-      @dismissed="dismissBanner"
-    >
-      ffmpeg-commander собирает команды. <strong><a href="https://video-commander.com?ref=ffmpeg-commander" target="_blank" rel="noopener">Video Commander</a></strong> выполняет весь процесс. <strong><a href="https://video-commander.com?ref=ffmpeg-commander" target="_blank" rel="noopener">video-commander.com</a> →</strong>
-    </b-alert>
-
     <div id="app-content" class="container">
       <b-tabs align="right" content-class="mt-4" v-model="tabIndex">
         <b-tab title="Конструктор">
@@ -104,17 +94,12 @@ export default {
       name: pkgInfo.name,
       version: pkgInfo.version,
       tabIndex: 0,
-      showBanner: localStorage.getItem('bannerDismissed') !== 'true',
     };
   },
   methods: {
     onEncode() {
       // eslint-disable-next-line no-plusplus
       this.tabIndex++;
-    },
-    dismissBanner() {
-      this.showBanner = false;
-      localStorage.setItem('bannerDismissed', 'true');
     },
   },
 };
